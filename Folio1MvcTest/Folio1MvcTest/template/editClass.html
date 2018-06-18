@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+    <div ng-controller="homeCtrl">
+        <div style="margin:20px;" class="panel panel-warning">
+            <strong style="margin-bottom:15px;">{{popupTitle}}</strong>
+            <div class="form-group">
+                <label>Class Name:</label>
+                <input class="form-control" ng-model="editingClass.Name" placeholder="Enter class name">
+            </div>
+            <div class="form-group">
+                <label>Location:</label>
+                <select placeholder="Select a location" class="form-control" ng-model="editingClass.LocationId" ng-options="option.Id as option.Description for option in model.LocationsList"></select>
+            </div>
+            <div class="form-group">
+                <label>Teacher Name:</label>
+                <select placeholder="Select a location" class="form-control" ng-model="editingClass.TeacherId" ng-options="option.Id as option.FirstName for option in model.TeachersList"></select>
+            </div>
+            <button class="btn btn-success" ng-click="Save()">Save</button>
+            <button ng-click="Cancel()" class="btn btn-danger">Cancel</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+<div ng-controller="homeCtrl">
+    <div style="margin:20px;" class="panel panel-warning">
+        <strong style="margin-bottom:15px;">{{studentPopupTitle}}</strong>
+        <div class="form-group">
+            <label>First Name:</label>
+            <input class="form-control" ng-model="editingStudent.FirstName" placeholder="Enter first name">
+        </div>
+        <div class="form-group">
+            <label>Last Name:</label>
+            <input class="form-control" ng-model="editingStudent.LastName" placeholder="Enter last name">
+        </div>
+        <div class="form-group">
+            <label>Age:</label>
+            <input type="number" step="1" max="99" class="form-control" ng-model="editingStudent.Age" placeholder="Enter age">
+        </div>
+        <div class="form-group">
+            <label>GPA:</label>
+            <input type="number" step="1" max="99" class="form-control" ng-model="editingStudent.GPA" placeholder="Enter GPA">
+        </div>
+        <div class="form-group">
+            <label>Class:</label>
+            <select ng-disabled="true" placeholder="Select a location" class="form-control" ng-model="editingStudent.ClassId" ng-options="option.Id as option.Name for option in model.ClassesList"></select>
+        </div>
+        <button class="btn btn-success" ng-click="SaveStudent(editingStudent)">Save</button>
+        <button ng-click="CancelStudentPopup()" class="btn btn-danger">Cancel</button>
+    </div>
+</div>
+</body>
+</html>
